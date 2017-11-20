@@ -27,11 +27,13 @@ public class LetterListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_letters_list);
         Folder folder = (Folder) getIntent().getSerializableExtra("folder");
-        App.getInstance().getMailComponent().createLetterListActivityComponent(new LetterListActivityModule(folder)).injectLettersListActivity(this);
+
+        App.getInstance().getMailComponent().createLetterListActivityComponent(
+                new LetterListActivityModule(folder)).injectLettersListActivity(this);
 
         lettersListView = (ListView) findViewById(R.id.lettersList);
 
-        adapter = new ArrayAdapter<Letter>(this, android.R.layout.simple_list_item_1);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
 
         lettersListView.setAdapter(adapter);
 

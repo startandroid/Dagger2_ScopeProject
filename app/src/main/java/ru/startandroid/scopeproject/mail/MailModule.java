@@ -26,5 +26,4 @@ public class MailModule {
     MailManager provideMailManager(Account account, ApiService apiService) {
         return new MailManager(account, apiService);
     }
-
 }

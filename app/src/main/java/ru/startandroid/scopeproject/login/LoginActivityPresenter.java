@@ -20,5 +20,4 @@ public class LoginActivityPresenter {
         Account account = accountManager.login(user, password);
         activity.showMailForAccount(account);
     }
-
 }

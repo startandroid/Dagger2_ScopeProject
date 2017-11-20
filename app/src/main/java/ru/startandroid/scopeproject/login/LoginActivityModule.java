@@ -20,5 +20,4 @@ public class LoginActivityModule {
     LoginActivityPresenter provideLoginActivityPresenter(AccountManager accountManager) {
         return new LoginActivityPresenter(accountManager);
     }
-
 }
