@@ -1,8 +1,8 @@
 package ru.startandroid.scopeproject.folders;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,9 +13,9 @@ import java.util.List;
 import javax.inject.Inject;
 
 import ru.startandroid.scopeproject.App;
+import ru.startandroid.scopeproject.R;
 import ru.startandroid.scopeproject.datatype.Folder;
 import ru.startandroid.scopeproject.letters.LetterListActivity;
-import ru.startandroid.scopeproject.R;
 
 public class FolderListActivity extends AppCompatActivity {
 
@@ -30,11 +30,12 @@ public class FolderListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_folders_list);
 
-        App.getInstance().getMailComponent().createFoldersListActivityComponent().injectFoldersListActivity(this);
+        App.getInstance().getMailComponent()
+                .createFoldersListActivityComponent().injectFoldersListActivity(this);
 
         foldersListView = (ListView) findViewById(R.id.foldersList);
 
-        adapter = new ArrayAdapter<Folder>(this, android.R.layout.simple_list_item_1);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
 
         foldersListView.setAdapter(adapter);
         foldersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
